@@ -1,0 +1,392 @@
+* {
+  margin: 0 0;
+  outline: none;
+  cursor: default;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+a, button {
+  cursor: pointer;
+}
+h1 {
+  color: rgb(234, 80, 42);
+}
+p {
+  font-size: 18px;    
+  line-height: 30px;
+  color: rgb(183, 190, 201);
+}
+li, ul {
+  font-size: 18px;    
+  line-height: 30px;
+  color: rgb(183, 190, 201);
+}
+input[type="text"], input[type="number"],
+input[type="email"], input[type="password"], textarea {
+  cursor: text;
+}
+body {
+  background: rgb( 13, 17, 23);
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+background-color: rgb(234, 80, 42);
+}
+
+#cover {
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  position: relative;
+  background-position: center;
+  background-image: url('../img/cover1.jpg');
+  background-size: cover;
+}
+#cover:before {
+  top: 0px;
+  left: 0px;
+  width: 1px;
+  content: "";
+  height: 100%;
+  position: absolute;
+  background: black;
+  box-shadow: 0px 0px 100px 2px rgba( 1, 1, 1, 1);
+}
+#cover:after {
+  top: 0px;
+  right: 0px;
+  width: 1px;
+  content: "";
+  height: 100%;
+  position: absolute;
+  box-shadow: 0px 0px 100px 2px rgba( 1, 1, 1, 1);
+}
+#coverSpace {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  padding-top: 60px;
+  padding-left: 40px;
+  position: absolute; 
+  padding-right: 40px;   
+  box-sizing: border-box;
+  color: rgb(183, 190, 201);
+  background: linear-gradient( 
+      0deg,
+      transparent 50%, 
+      rgba( 1, 1, 1, 0.9) 100%
+  );
+  animation: wallpaper 5s infinite;
+  text-shadow: 0px 0px 12px rgba( 1, 1, 1, 1);
+}
+@keyframes wallpaper {
+  0% {        
+      background-color: rgba( 1, 1, 1, 0.0);
+  }
+  50% {        
+      background-color: rgba( 1, 1, 1, 0.4);
+  }
+  100% {        
+      background-color: rgba( 1, 1, 1, 0.0);
+  }
+}
+.cover--txt {
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+.cover--txt ._title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: rgb(234, 80, 42);
+  text-shadow: 0px 0px 12px rgba( 1, 1, 1, 1);
+}
+.cover--txt span {
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 3px;
+  border-radius: 6px 6px;
+  border: solid 0.5px;
+  background: rgba( 13, 17, 23, 0.5);
+}
+
+header {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 60px;
+  z-index: 300;
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.fixed::after {
+  top: -40px;
+  left: 0px;
+  content: "";
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  border-radius: 50% 50%;
+  box-shadow: 0px 0px 120px 80px rgba( 1, 1, 1, 0.7);
+}
+header #title {
+  width: auto;
+  height: 60px;
+  z-index: 300;
+  display: table;
+  font-size: 24px;
+  margin: auto auto;
+  font-weight: bold;
+  line-height: 60px;
+  position: relative;
+  padding-left: 17px;
+  padding-right: 17px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(234, 80, 42);
+}
+header #title:before {
+  left: 50%;
+  top: -10px;
+  content: "";
+  width: 100%;
+  height: 10px;
+  z-index: 600;
+  position: absolute;
+  border-radius: 50% 50%;
+  transform: translateX(-50%);
+  animation: shadow 2s infinite;
+  box-shadow: 0px 0px 20px 5px rgb(234, 80, 42);
+}
+@keyframes shadow {
+  0% {        
+      width: 96%;
+      box-shadow: 0px 0px 20px 5px rgb(234, 80, 42);
+  }
+  50% {        
+      width: 100%;
+      box-shadow: 0px 0px 25px 6px rgb(234, 80, 42);
+  }
+  100% {        
+      width: 96%;
+      box-shadow: 0px 0px 20px 5px rgb(234, 80, 42);
+  }
+}
+
+header #menu-left a, 
+header #menu-right a {
+  float: left;
+  display: table;
+  line-height: 60px;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all linear 0.2s;
+  color: rgb(155, 147, 139);
+  text-transform: uppercase;
+}
+header #menu-left a.active, 
+header #menu-right a.active,
+header #menu-left a.active:hover, 
+header #menu-right a.active:hover {
+  color: rgb(234, 80, 42);
+}
+header #menu-left a:hover, 
+header #menu-right a:hover {
+  color: rgb(219, 209, 196);
+}
+
+header #menu-left {
+  top: 0px;
+  z-index: 300;
+  right: calc(50% + 100px);
+  position: absolute;
+}
+
+header #menu-right {
+  top: 0px;
+  z-index: 300;
+  left: calc(50% + 100px);
+  position: absolute;
+}
+
+.content {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+.content * {
+  z-index: 2;
+}
+
+.content .content--header {
+  width: 100%;
+  height: 60px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 60px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  color: rgb(234, 80, 42);
+  background: linear-gradient(
+      90deg,
+      rgb( 13, 17, 23) 0%,
+      rgb( 23, 27, 33) 25%,
+      rgb( 33, 37, 43) 50%,
+      rgb( 23, 27, 33) 75%,
+      rgb( 13, 17, 23) 100%
+  );
+}
+
+.content .content--header span.hide {
+  color: transparent;
+}
+
+.content .event {
+  width: 33.3%;
+  height: 300px;
+  margin-right: -4px;
+  position: relative;
+  vertical-align: top;
+  display: inline-block;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.content .event .event--title {
+  width: 100%;
+  height: 100%;
+  font-size: 28px;
+  line-height: 300px;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0px 0px 12px rgba( 1, 1, 1, 1);
+  color: rgb(193, 205, 212);
+  background: radial-gradient(ellipse at bottom, rgba(1, 1, 1, 0.3) 0%, rgb(1, 1, 1) 100%);
+  overflow: hidden;
+}
+
+.content .c--doble {
+  width: 100%;
+  height: auto;
+  position: relative;
+  box-sizing: border-box;
+  background: transparent;
+  border-top: solid 20px transparent;
+  border-bottom: solid 20px transparent;
+  border-left: solid 30px transparent;
+  border-right: solid 30px transparent;
+}
+
+.content .c--doble ._section {
+  width: 50%;
+  margin-right: -4px;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.content .c--doble ._section > * {
+  width: 70%;
+  margin: auto auto;
+}
+
+.content .c--doble ._section form input {
+  width: 100%;
+  height: 60px;
+  display: block;
+  font-size: 16px;
+  margin-top: 30px;
+  margin-left: auto;
+  padding-left: 20px;
+  margin-right: auto;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px 4px;
+  box-sizing: border-box;
+  color: rgb(234, 80, 42);
+  border: solid 1px rgb(234, 80, 42);
+  background: linear-gradient(
+      90deg,
+      rgb( 23, 27, 33) 0%,
+      rgb( 13, 17, 23) 100%
+  );
+}
+.content .c--doble ._section form h1 {
+  margin-bottom: -10px;
+}
+
+.content .c--doble ._section form input:focus {
+  background: linear-gradient(
+      90deg,
+      rgb( 33, 37, 43) 0%,
+      rgb( 23, 27, 33) 100%
+  );
+  box-shadow: 0px 0px 10px 0px rgb(234, 80, 42);
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-weight: bold;
+  color: rgb(234, 80, 42);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-weight: bold;
+  color: rgb(234, 80, 42);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  font-weight: bold;
+  color: rgb(234, 80, 42);
+}
+
+.content .c--doble ._section form input[type="submit"] {
+  width: auto;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(182, 170, 167);
+  background: rgb(234, 80, 42);
+}
+
+#ingresa {
+  background: url(../img/cars2.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+#ingresa::after {
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  content: "hcjhg";
+  position: absolute;
+  background: radial-gradient(ellipse at bottom, rgba(1, 1, 1, 0.6) 0%, rgb(1, 1, 1) 100%);   
+}
+
+#ubicacion {
+  position: absolute;
+  height: 100% !important;
+}
+
+#ubicacion #map {
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+}

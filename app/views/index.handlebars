@@ -1,0 +1,130 @@
+<script src="/js/actionshome.js"></script>
+<header id="h">
+    <div id="menu-left">
+        <a href="#eventos">Eventos</a>
+        <a href="#nosotros">Nosotros</a>
+    </div>
+    <a href="#cover" id="title">Vorzeigen</a href="#cover">
+    <div id="menu-right">
+        <a href="#ingresa">Ingresa</a>
+        <a href="#ubicacion">Ubicación</a>
+    </div>
+</header>
+<div id="cover">
+    <div id="coverSpace">
+        <div class="cover--txt">
+            <div class="_title">DIVIÉRTETE</div>
+            <span>
+                Encuentra los mejores eventos de automóviles cerca de ti
+            </span>
+        </div>
+    </div>
+</div>
+<div class="content" id="eventos">
+    <div class="content--header"><span>> > > EVENTOS < < <</span></div>
+    <div class="event" style="background:url(/img/cover4.jpg);">
+        <div class="event--title">Tokyo Motor Show</div>
+    </div>
+    <div class="event" style="background:url(/img/cars1.jpg);">
+        <div class="event--title"> Auto Shanghai</div>
+    </div>
+    <div class="event" style="background:url(/img/cover2.jpg);">
+        <div class="event--title">Chicago Auto Show</div>
+    </div>
+    <div class="event" style="background:url(/img/cover3.jpg);">
+        <div class="event--title">París Motor Show</div>
+    </div>
+    <div class="event" style="background:url(/img/cars2.jpg);">
+        <div class="event--title">AutoCarSow</div>
+    </div>
+    <div class="event" style="background:url(/img/cars3.jpg);">
+        <div class="event--title">Frankfurt Motor Show</div>
+    </div>
+</div>
+<div class="content" id="nosotros">
+    <div class="content--header"><span>> > > NOSOTROS < < <</span></div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+<div class="content" id="ingresa">
+    <div class="content--header"><span>> > > INGRESA < < <</span></div>
+    <div class="c--doble">
+        <div class="_section">
+            <h1>INFORMACIÓN</h1> <br>
+            <p>
+                ¿Te gustaría publicar tu evento? Ingresa a la plataforma y podrás
+                <ul>
+                    <li>Publicar tu evento</li>
+                    <li>Marcar la ubicación en el mapa</li>
+                    <li>Etc...</li>
+                </ul>
+                <br>
+            </p>
+            <form action="">
+                <h1>INGRESA</h1>
+                <input type="email" placeholder="Correo Electrónico" />
+                <input type="password" placeholder="Contraseña" />
+                <input type="submit" value="Ingresar">
+            </form>
+        </div>
+        <div class="_section">
+            <form action="">
+                <h1>REGÍSTRATE</h1>
+                <input type="text" placeholder="Nombre" />
+                <input type="text" placeholder="Apellido" />
+                <input type="email" placeholder="Correo Electrónico" />
+                <input type="password" placeholder="Contraseña" />
+                <input type="password" placeholder="Contraseña" />
+                <input type="submit" value="Registrame">
+            </form>
+        </div>
+    </div>
+</div>
+<div class="content" id="ubicacion">
+    <div class="content--header"><span>> > > UBICACIÓN < < <</span></div>
+    <div id="map"></div>
+</div>
+<script>
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 19.409793, lng: -99.316224},
+      zoom: 17,
+    disableDefaultUI: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [
+            {
+                "stylers": [
+                    {
+                        "hue": "#ff1a00"
+                    },
+                    {
+                        "invert_lightness": true
+                    },
+                    {
+                        "saturation": -200
+                    },
+                    {
+                        "lightness": 35
+                    },
+                    {
+                        "gamma": 0.5
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#2D333C"
+                    }
+                ]
+            }
+        ]
+    });
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7B7SuMxuhVlpsFDh8FjOtehozOrnCtn4&callback=initMap">
+</script>
